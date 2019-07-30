@@ -1,12 +1,14 @@
 import { action, observable } from 'mobx'
 
+import { todoFilterTypes } from '../../constants/TodoAppConstants'
+
 import Todo from '../models/Todo'
 class TodoStore {
   @observable todos
   @observable appliedFilter
   constructor() {
     this.todos = []
-    this.appliedFilter = 'ALL'
+    this.appliedFilter = todoFilterTypes.all
   }
 
   @action.bound

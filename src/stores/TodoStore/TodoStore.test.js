@@ -1,3 +1,5 @@
+import { todoFilterTypes } from '../../constants/TodoAppConstants'
+
 import TodoStore from './index'
 
 describe('TodoStore', () => {
@@ -35,6 +37,6 @@ describe('TodoStore', () => {
   })
 
   it('should check for default filter value as ALL', () => {
-    expect(todoStore.appliedFilter).toBe('ALL')
+    expect(todoStore.appliedFilter).toBe(todoFilterTypes.all)
   })
 })
