@@ -18,6 +18,6 @@ describe('TodoApp', () => {
       keyCode: 13,
       which: 13
     })
-    expect(todoStore.addTodo).toHaveBeenCalledTimes(1)
+    expect(todoStore.addTodo).toBeCalledWith('Learn TDD')
   })
 })

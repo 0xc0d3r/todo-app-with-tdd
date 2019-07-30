@@ -4,7 +4,8 @@ import TodoInput from './TodoInput'
 
 class TodoApp extends Component {
   onPressEnterKey = todoDescription => {
-    console.log('todoDescription: ', todoDescription)
+    const { todoStore } = this.props
+    todoStore.addTodo(todoDescription)
   }
 
   render() {
