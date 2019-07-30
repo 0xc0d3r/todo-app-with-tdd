@@ -3,8 +3,10 @@ import { action, observable } from 'mobx'
 import Todo from '../models/Todo'
 class TodoStore {
   @observable todos
+  @observable appliedFilter
   constructor() {
     this.todos = []
+    this.appliedFilter = 'ALL'
   }
 
   @action.bound
