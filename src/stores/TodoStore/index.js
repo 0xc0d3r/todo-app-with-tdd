@@ -23,7 +23,9 @@ class TodoStore {
   }
 
   @action.bound
-  clearCompleted() {}
+  clearCompleted() {
+    this.todos = this.todos.filter(todo => !todo.completed)
+  }
 }
 
 export default TodoStore
