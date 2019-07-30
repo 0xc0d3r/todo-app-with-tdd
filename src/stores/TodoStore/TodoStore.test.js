@@ -39,4 +39,14 @@ describe('TodoStore', () => {
   it('should check for default filter value as ALL', () => {
     expect(todoStore.appliedFilter).toBe(todoFilterTypes.all)
   })
+
+  it('should set the applied filter value as ALL', () => {
+    todoStore.addTodo('Learn Jest')
+    todoStore.addTodo('Learn RTL')
+    todoStore.addTodo('Learn TDD')
+
+    todoStore.setAppliedFilter(todoFilterTypes.all)
+    expect(todoStore.appliedFilter).toBe(todoFilterTypes.all)
+    expect(todoStore.filteredTodos.length).toBe(3)
+  })
 })
