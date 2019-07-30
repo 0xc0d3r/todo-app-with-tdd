@@ -7,4 +7,15 @@ describe('TodoStore', () => {
     todoStore.addTodo('Learn TDD')
     expect(todoStore.todos.length).toBe(1)
   })
+
+  it('should delete the given todo from list of todo items', () => {
+    const todoStore = new TodoStore()
+    todoStore.addTodo('Learn Jest')
+    todoStore.addTodo('Learn RTL')
+    todoStore.addTodo('Learn TDD')
+
+    expect(todoStore.todos.length).toBe(3)
+    todoStore.deleteTodo(todoStore.todos[0])
+    expect(todoStore.todos.length).toBe(3)
+  })
 })
