@@ -24,6 +24,7 @@ class TodoInput extends Component {
   render() {
     return (
       <input
+        value={this.state.description}
         type='text'
         name='todo-input'
         placeholder='What needs to be done?'
