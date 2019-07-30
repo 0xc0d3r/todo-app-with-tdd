@@ -16,7 +16,7 @@ class TodoApp extends Component {
       <div>
         <TodoInput onPressEnterKey={this.onPressEnterKey} />
         <TodoList todoStore={todoStore} />
-        <TodoFooter />
+        <TodoFooter todoStore={todoStore} />
       </div>
     )
   }
