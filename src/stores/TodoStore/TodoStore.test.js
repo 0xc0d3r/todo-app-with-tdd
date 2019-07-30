@@ -33,4 +33,8 @@ describe('TodoStore', () => {
     todoStore.clearCompleted()
     expect(todoStore.todos.length).toBe(1)
   })
+
+  it('should check for default filter value as ALL', () => {
+    expect(todoStore.appliedFilter).toBe('ALL')
+  })
 })
