@@ -43,6 +43,8 @@ class TodoStore {
         return this.todos
       case todoFilterTypes.active:
         return this.todos.filter(todo => !todo.completed)
+      case todoFilterTypes.completed:
+        return this.todos.filter(todo => todo.completed)
       default:
         return this.todos
     }
