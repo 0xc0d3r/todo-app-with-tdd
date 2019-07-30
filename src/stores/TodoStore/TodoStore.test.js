@@ -49,4 +49,13 @@ describe('TodoStore', () => {
     expect(todoStore.appliedFilter).toBe(todoFilterTypes.active)
     expect(todoStore.filteredTodos.length).toBe(2)
   })
+
+  it('should set the applied filter value as COMPLETED', () => {
+    todoStore.todos[0].toggleCompleted()
+
+    todoStore.setAppliedFilter(todoFilterTypes.completed)
+
+    expect(todoStore.appliedFilter).toBe(todoFilterTypes.completed)
+    expect(todoStore.filteredTodos.length).toBe(1)
+  })
 })
