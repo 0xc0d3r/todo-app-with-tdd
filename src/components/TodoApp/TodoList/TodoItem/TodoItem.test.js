@@ -34,7 +34,7 @@ describe('TodoItem', () => {
       <TodoItem todo={todo} onDeleteTodo={onDeleteTodo} />
     )
 
-    const deleteBtn = getByTestId('delete-btn')
+    const deleteBtn = getByTestId(`delete-btn-${todo.id}`)
     fireEvent.click(deleteBtn)
     expect(onDeleteTodo).toBeCalledWith(todo)
   })

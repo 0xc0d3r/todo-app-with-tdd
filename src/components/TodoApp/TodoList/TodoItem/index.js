@@ -6,6 +6,11 @@ class TodoItem extends Component {
     todo.toggleCompleted()
   }
 
+  onDeleteTodo = () => {
+    const { todo, onDeleteTodo } = this.props
+    onDeleteTodo(todo)
+  }
+
   render() {
     const { todo } = this.props
     return (
@@ -16,7 +21,12 @@ class TodoItem extends Component {
           onChange={this.onToggleTodoCompletion}
         />
         <span>{todo.description}</span>
-        <button>X</button>
+        <button
+          data-testid={`delete-btn-${todo.id}`}
+          onClick={this.onDeleteTodo}
+        >
+          X
+        </button>
       </div>
     )
   }
