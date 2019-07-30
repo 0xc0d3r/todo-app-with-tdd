@@ -16,6 +16,11 @@ class TodoStore {
     }
     this.todos.push(new Todo(newTodo))
   }
+
+  @action.bound
+  deleteTodo(todo) {
+    this.todos.remove(todo)
+  }
 }
 
 export default TodoStore

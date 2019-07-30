@@ -16,6 +16,6 @@ describe('TodoStore', () => {
 
     expect(todoStore.todos.length).toBe(3)
     todoStore.deleteTodo(todoStore.todos[0])
-    expect(todoStore.todos.length).toBe(3)
+    expect(todoStore.todos.length).toBe(2)
   })
 })
