@@ -13,6 +13,11 @@ class TodoFooter extends Component {
     todoStore.setAppliedFilter(todoFilterTypes.active)
   }
 
+  handleSelectCompleted = () => {
+    const { todoStore } = this.props
+    todoStore.setAppliedFilter(todoFilterTypes.completed)
+  }
+
   handleClearCompleted = () => {
     const { todoStore } = this.props
     todoStore.clearCompleted()
@@ -24,6 +29,8 @@ class TodoFooter extends Component {
         <span>Todos Left: 0</span>
         <button onClick={this.handleSelectAll}>All</button>
         <button onClick={this.handleSelectActive}>Active</button>
+        <button onClick={this.handleSelectCompleted}>Completed</button>
+
         <button
           onClick={this.handleClearCompleted}
           data-testid='clear-completed-btn'
