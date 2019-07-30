@@ -1,4 +1,4 @@
-import { action, observable } from 'mobx'
+import { action, computed, observable } from 'mobx'
 
 import { todoFilterTypes } from '../../constants/TodoAppConstants'
 
@@ -29,6 +29,21 @@ class TodoStore {
   @action.bound
   clearCompleted() {
     this.todos = this.todos.filter(todo => !todo.completed)
+  }
+
+  @action.bound
+  setAppliedFilter(appliedFilter) {
+    this.appliedFilter = appliedFilter
+  }
+
+  @computed
+  get filteredTodos() {
+    switch (this.appliedFilter) {
+      case todoFilterTypes.all:
+        return this.todos
+      default:
+        return this.todos
+    }
   }
 }
 
