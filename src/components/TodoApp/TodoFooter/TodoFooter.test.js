@@ -25,4 +25,13 @@ describe('TodoFooter', () => {
     fireEvent.click(allFilterBtn)
     expect(todoStore.setAppliedFilter).toBeCalledWith(todoFilterTypes.all)
   })
+
+  it('should set applied filter as ACTIVE after clicking on Active button', () => {
+    const todoStore = new TodoStore()
+    jest.spyOn(todoStore, 'setAppliedFilter')
+    const { getByText } = render(<TodoFooter todoStore={todoStore} />)
+    const allFilterBtn = getByText('Active')
+    fireEvent.click(allFilterBtn)
+    expect(todoStore.setAppliedFilter).toBeCalledWith(todoFilterTypes.active)
+  })
 })
