@@ -2,7 +2,9 @@
   "name": "react-mobx-starter-kit",
   "version": "0.1.0",
   "private": true,
-  "devDependencies": {},
+  "devDependencies": {
+    "@testing-library/react": "8.0.7"
+  },
   "dependencies": {
     "@babel/core": "7.4.3",
     "@babel/plugin-proposal-decorators": "7.4.4",
