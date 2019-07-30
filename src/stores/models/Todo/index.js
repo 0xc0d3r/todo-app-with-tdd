@@ -1,4 +1,4 @@
-import { observable } from 'mobx'
+import { action, observable } from 'mobx'
 
 class Todo {
   id
@@ -10,6 +10,11 @@ class Todo {
     this.id = id
     this.description = description
     this.completed = completed
+  }
+
+  @action.bound
+  toggleCompleted() {
+    this.completed = !this.completed
   }
 }
 

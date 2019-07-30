@@ -13,7 +13,7 @@ describe('TodoItem', () => {
       completed: false
     }
     const todo = new Todo(newTodo)
-    // jest.spyOn(todo, 'toggleCompleted')
+    jest.spyOn(todo, 'toggleCompleted')
     const { getByTestId } = render(<TodoItem todo={todo} />)
     const checkbox = getByTestId(`${todo.id}`)
     expect(checkbox.checked).toBe(false)
