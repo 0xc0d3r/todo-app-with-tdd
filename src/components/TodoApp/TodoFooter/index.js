@@ -1,6 +1,11 @@
 import React, { Component } from 'react'
 
 class TodoFooter extends Component {
+  handleClearCompleted = () => {
+    const { todoStore } = this.props
+    todoStore.clearCompleted()
+  }
+
   render() {
     return (
       <div>
@@ -8,7 +13,12 @@ class TodoFooter extends Component {
         <button onClick={this.handleSelectAll}>All</button>
         <button onClick={this.handleSelectActive}>Active</button>
         <button onClick={this.handleSelectCompleted}>Completed</button>
-        <button onClick={this.handleClearCompleted}>Clear completed</button>
+        <button
+          onClick={this.handleClearCompleted}
+          data-testid='clear-completed-btn'
+        >
+          Clear completed
+        </button>
       </div>
     )
   }

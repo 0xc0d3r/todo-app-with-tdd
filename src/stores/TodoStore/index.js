@@ -21,6 +21,9 @@ class TodoStore {
   deleteTodo(todo) {
     this.todos.remove(todo)
   }
+
+  @action.bound
+  clearCompleted() {}
 }
 
 export default TodoStore
