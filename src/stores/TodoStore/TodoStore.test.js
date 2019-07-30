@@ -21,4 +21,16 @@ describe('TodoStore', () => {
     todoStore.deleteTodo(todoStore.todos[0])
     expect(todoStore.todos.length).toBe(2)
   })
+
+  it('should clear completed todo items', () => {
+    todoStore.addTodo('Learn Jest')
+    todoStore.addTodo('Learn RTL')
+    todoStore.addTodo('Learn TDD')
+
+    expect(todoStore.todos.length).toBe(3)
+    todoStore.todos[0].toggleCompleted()
+    todoStore.todos[2].toggleCompleted()
+    todoStore.clearCompleted()
+    expect(todoStore.todos.length).toBe(1)
+  })
 })
