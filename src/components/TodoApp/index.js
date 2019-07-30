@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 
 import TodoInput from './TodoInput'
 import TodoList from './TodoList'
+import TodoFooter from './TodoFooter'
 
 class TodoApp extends Component {
   onPressEnterKey = todoDescription => {
@@ -15,6 +16,7 @@ class TodoApp extends Component {
       <div>
         <TodoInput onPressEnterKey={this.onPressEnterKey} />
         <TodoList todoStore={todoStore} />
+        <TodoFooter />
       </div>
     )
   }
