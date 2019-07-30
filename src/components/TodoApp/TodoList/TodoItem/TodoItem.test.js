@@ -6,13 +6,18 @@ import Todo from '../../../../stores/models/Todo'
 import TodoItem from './index'
 
 describe('TodoItem', () => {
-  it('should complete the todo on check the checkbox', () => {
+  let todo
+
+  beforeEach(() => {
     const newTodo = {
       id: Date.now(),
       description: 'Learn TDD',
       completed: false
     }
-    const todo = new Todo(newTodo)
+    todo = new Todo(newTodo)
+  })
+
+  it('should complete the todo on check the checkbox', () => {
     jest.spyOn(todo, 'toggleCompleted')
     const { getByTestId } = render(<TodoItem todo={todo} />)
     const checkbox = getByTestId(`${todo.id}`)
@@ -23,12 +28,6 @@ describe('TodoItem', () => {
   })
 
   it('should delete the todo on click delete button', () => {
-    const newTodo = {
-      id: Date.now(),
-      description: 'Learn TDD',
-      completed: false
-    }
-    const todo = new Todo(newTodo)
     const onDeleteTodo = jest.fn()
     const { getByTestId } = render(
       <TodoItem todo={todo} onDeleteTodo={onDeleteTodo} />

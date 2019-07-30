@@ -1,15 +1,18 @@
 import TodoStore from './index'
 
 describe('TodoStore', () => {
+  let todoStore
+  beforeEach(() => {
+    todoStore = new TodoStore()
+    return todoStore
+  })
   it('should add a todo to list of todo items', () => {
-    const todoStore = new TodoStore()
     expect(todoStore.todos.length).toBe(0)
     todoStore.addTodo('Learn TDD')
     expect(todoStore.todos.length).toBe(1)
   })
 
   it('should delete the given todo from list of todo items', () => {
-    const todoStore = new TodoStore()
     todoStore.addTodo('Learn Jest')
     todoStore.addTodo('Learn RTL')
     todoStore.addTodo('Learn TDD')
