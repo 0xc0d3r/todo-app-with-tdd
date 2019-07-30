@@ -1180,6 +1180,16 @@
     "@types/istanbul-lib-coverage" "*"
     "@types/istanbul-lib-report" "*"
 
+"@types/jest-diff@*":
+  version "20.0.1"
+  resolved "https://ibuild.jfrog.io/ibuild/api/npm/npm/@types/jest-diff/-/jest-diff-20.0.1.tgz#35cc15b9c4f30a18ef21852e255fdb02f6d59b89"
+
+"@types/jest@24.0.16":
+  version "24.0.16"
+  resolved "https://ibuild.jfrog.io/ibuild/api/npm/npm/@types/jest/-/jest-24.0.16.tgz#8d3e406ec0f0dc1688d6711af3062ff9bd428066"
+  dependencies:
+    "@types/jest-diff" "*"
+
 "@types/q@^1.5.1":
   version "1.5.2"
   resolved "https://ibuild.jfrog.io/ibuild/api/npm/npm/@types/q/-/q-1.5.2.tgz#690a1475b84f2a884fd07cd797c00f5f31356ea8"

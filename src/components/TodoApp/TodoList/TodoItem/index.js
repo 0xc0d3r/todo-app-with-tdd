@@ -5,7 +5,7 @@ class TodoItem extends Component {
     const { todo } = this.props
     return (
       <div>
-        <input type='checkbox' />
+        <input type='checkbox' data-testid={todo.id} />
         <span>{todo.description}</span>
         <button>X</button>
       </div>
