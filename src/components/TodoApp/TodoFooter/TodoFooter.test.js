@@ -1,5 +1,6 @@
 import React from 'react'
 import { render, fireEvent } from '@testing-library/react'
+import '@testing-library/react/cleanup-after-each'
 
 import { todoFilterTypes } from '../../../constants/TodoAppConstants'
 import TodoStore from '../../../stores/TodoStore'
@@ -19,8 +20,8 @@ describe('TodoFooter', () => {
   it('should set applied filter as ALL after clicking on All button', () => {
     const todoStore = new TodoStore()
     jest.spyOn(todoStore, 'setAppliedFilter')
-    const { getByTestId } = render(<TodoFooter todoStore={todoStore} />)
-    const allFilterBtn = getByTestId('all-btn')
+    const { getByText } = render(<TodoFooter todoStore={todoStore} />)
+    const allFilterBtn = getByText('All')
     fireEvent.click(allFilterBtn)
     expect(todoStore.setAppliedFilter).toBeCalledWith(todoFilterTypes.all)
   })
