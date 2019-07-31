@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
-
+import { observer } from 'mobx-react'
 import { todoFilterTypes } from '../../../constants/TodoAppConstants'
 
+@observer
 class TodoFooter extends Component {
   handleSelectAll = () => {
     const { todoStore } = this.props
@@ -24,9 +25,11 @@ class TodoFooter extends Component {
   }
 
   render() {
+    const { todoStore } = this.props
+
     return (
       <div>
-        <span>Todos Left: 0</span>
+        <span>Todos Left: {todoStore.todosLeft}</span>
         <button onClick={this.handleSelectAll}>All</button>
         <button onClick={this.handleSelectActive}>Active</button>
         <button onClick={this.handleSelectCompleted}>Completed</button>

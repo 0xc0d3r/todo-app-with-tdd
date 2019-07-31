@@ -49,6 +49,11 @@ class TodoStore {
         return this.todos
     }
   }
+
+  @computed
+  get todosLeft() {
+    return this.todos.filter(todo => !todo.completed).length
+  }
 }
 
 export default TodoStore
